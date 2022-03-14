@@ -12,7 +12,11 @@
 
       <dt>Box</dt>
       <!-- Display box_id start -->
-      <dd><%= item.box_id %></dd>
+      <dd>
+        <% if @item.box.present? %>
+          <%= link_to item.box, item.box %>
+        <% end %>
+      </dd>
       <!-- Display box_id end -->
 
     </dl>

@@ -12,12 +12,20 @@
 
       <dt>User</dt>
       <!-- Display user_id start -->
-      <dd><%= box.user_id %></dd>
+      <dd>
+        <% if @box.user.present? %>
+          <%= link_to box.user, box.user %>
+        <% end %>
+      </dd>
       <!-- Display user_id end -->
 
       <dt>Category</dt>
       <!-- Display category_id start -->
-      <dd><%= box.category_id %></dd>
+      <dd>
+        <% if @box.category.present? %>
+          <%= link_to box.category, box.category %>
+        <% end %>
+      </dd>
       <!-- Display category_id end -->
 
     </dl>
