@@ -1,0 +1,22 @@
+<!-- Form item start -->
+<%= form_with(model: @item, local: true) do |f| %>
+<!-- Form item end -->
+
+  <!-- Label and input for title start -->
+  <div class="form-group">
+    <%= f.label :title %>
+
+    <!-- Input for title start -->
+    <%= f.text_field :title, class: "form-control" %>
+    <!-- Input for title end -->
+  </div>
+  <!-- Label and input for title end -->
+
+  <!-- Label and input for box_id start -->
+  <!-- Input for box_id start -->
+  <%= f.hidden_field :box_id, value: @box.id %>
+  <!-- Input for box_id end -->
+  <!-- Label and input for box_id end -->
+
+  <%= f.submit "Create item", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

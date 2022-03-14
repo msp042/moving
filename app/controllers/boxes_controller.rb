@@ -8,6 +8,7 @@ class BoxesController < ApplicationController
 
   # GET /boxes/1
   def show
+    @item = Item.new
   end
 
   # GET /boxes/new
@@ -24,7 +25,12 @@ class BoxesController < ApplicationController
     @box = Box.new(box_params)
 
     if @box.save
-      redirect_to @box, notice: 'Box was successfully created.'
+      message = 'Box was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @box, notice: message
+      end
     else
       render :new
     end

@@ -1,0 +1,32 @@
+<!-- Form box start -->
+<%= form_with(model: @box, local: true) do |f| %>
+<!-- Form box end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <%= f.label :name %>
+
+    <!-- Input for name start -->
+    <%= f.text_field :name, class: "form-control" %>
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for user_id start -->
+  <!-- Input for user_id start -->
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <!-- Input for user_id end -->
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <%= f.label :category_id %>
+
+    <!-- Input for category_id start -->
+    <%= f.text_field :category_id, class: "form-control" %>
+    <!-- Input for category_id end -->
+  </div>
+  <!-- Label and input for category_id end -->
+
+  <%= f.submit "Create box", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
