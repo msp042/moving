@@ -9,4 +9,12 @@ class CategoryResource < ApplicationResource
 
   # Indirect associations
 
+  has_many :items do
+    assign_each do |category, items|
+      items.select do |i|
+        i.id.in?(category.items.map(&:id))
+      end
+    end
+  end
+
 end
