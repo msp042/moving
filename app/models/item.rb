@@ -5,6 +5,10 @@ class Item < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :category,
+             :through => :box,
+             :source => :category
+
   # Validations
 
   # Scopes

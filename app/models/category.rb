@@ -6,6 +6,10 @@ class Category < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :items,
+             :through => :boxes,
+             :source => :items
+
   # Validations
 
   # Scopes
