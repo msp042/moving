@@ -1,6 +1,8 @@
 class Box < ApplicationRecord
   # Direct associations
 
+  belongs_to :category
+
   has_many   :items,
              :dependent => :destroy
 

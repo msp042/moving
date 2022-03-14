@@ -4,6 +4,8 @@ RSpec.describe Category, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:boxes) }
+
     end
 
     describe "InDirect Associations" do
