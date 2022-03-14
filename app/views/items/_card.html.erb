@@ -1,0 +1,46 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Item #<%= item.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Title</dt>
+      <!-- Display title start -->
+      <dd><%= item.title %></dd>
+      <!-- Display title end -->
+
+      <dt>Box</dt>
+      <!-- Display box_id start -->
+      <dd><%= item.box_id %></dd>
+      <!-- Display box_id end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back item, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link item start -->
+      <div class="col">
+        <%= link_to edit_item_url(item), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link item end -->
+
+      <!-- Delete link item start -->
+      <div class="col">
+        <%= link_to item, method: :delete, data: { confirm: "Do you really want to delete this item?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link item end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(item.updated_at) %> ago
+  </div>
+</div>

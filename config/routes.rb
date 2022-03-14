@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :items
   resources :boxes
   devise_for :users
   resources :users
