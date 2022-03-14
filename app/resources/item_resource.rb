@@ -11,11 +11,18 @@ class ItemResource < ApplicationResource
 
   # Indirect associations
 
+  has_one    :user
   has_one    :category
 
   filter :category_id, :integer do
     eq do |scope, value|
       scope.eager_load(:category).where(:boxes => {:category_id => value})
+    end
+  end
+
+  filter :user_id, :integer do
+    eq do |scope, value|
+      scope.eager_load(:user).where(:boxes => {:user_id => value})
     end
   end
 end

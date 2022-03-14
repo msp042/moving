@@ -11,4 +11,12 @@ class UserResource < ApplicationResource
 
   # Indirect associations
 
+  has_many :items do
+    assign_each do |user, items|
+      items.select do |i|
+        i.id.in?(user.items.map(&:id))
+      end
+    end
+  end
+
 end
