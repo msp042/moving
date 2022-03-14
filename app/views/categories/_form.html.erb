@@ -1,5 +1,27 @@
 <% was_validated = category.errors.any? %>
 
 <%= form_with(model: category, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <div class="form-group">
+    <% category_class = "form-control" %>
+    <% category_was_invalid = category.errors.include?(:category) %>
+
+    <% if was_validated %>
+      <% if category_was_invalid %>
+        <% category_class << " is-invalid" %>
+      <% else %>
+        <% category_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :category %>
+    <%= f.text_field :category, class: category_class, placeholder: "Enter category" %>
+    <% if category_was_invalid %>
+      <% category.errors.full_messages_for(:category).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
