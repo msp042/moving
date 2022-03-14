@@ -7,7 +7,7 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :boxes
+  has_many :boxes
 
   # Indirect associations
 
@@ -18,5 +18,4 @@ class UserResource < ApplicationResource
       end
     end
   end
-
 end

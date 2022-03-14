@@ -4,7 +4,7 @@ class Box < ApplicationRecord
   belongs_to :category
 
   has_many   :items,
-             :dependent => :destroy
+             dependent: :destroy
 
   belongs_to :user
 
@@ -17,5 +17,4 @@ class Box < ApplicationRecord
   def to_s
     name
   end
-
 end

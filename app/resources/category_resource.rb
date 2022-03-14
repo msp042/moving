@@ -5,7 +5,7 @@ class CategoryResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :boxes
+  has_many :boxes
 
   # Indirect associations
 
@@ -16,5 +16,4 @@ class CategoryResource < ApplicationResource
       end
     end
   end
-
 end

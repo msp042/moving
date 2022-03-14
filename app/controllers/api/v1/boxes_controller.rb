@@ -13,7 +13,7 @@ class Api::V1::BoxesController < Api::V1::GraphitiController
     box = BoxResource.build(params)
 
     if box.save
-      render jsonapi: box, status: 201
+      render jsonapi: box, status: :created
     else
       render jsonapi_errors: box
     end
@@ -33,7 +33,7 @@ class Api::V1::BoxesController < Api::V1::GraphitiController
     box = BoxResource.find(params)
 
     if box.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: box
     end

@@ -2,13 +2,13 @@ class Category < ApplicationRecord
   # Direct associations
 
   has_many   :boxes,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
   has_many   :items,
-             :through => :boxes,
-             :source => :items
+             through: :boxes,
+             source: :items
 
   # Validations
 
@@ -17,5 +17,4 @@ class Category < ApplicationRecord
   def to_s
     created_at
   end
-
 end
