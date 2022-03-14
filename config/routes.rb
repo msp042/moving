@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "boxes#index"
   resources :categories
   resources :items
   resources :boxes
