@@ -53,48 +53,8 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :created_at, "Category Created at" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='categorygteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :category_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Category Created at greater than or equal to", :data => {:target => '#categorygteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#categorygteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-
-      <div class='col-md-6'>
-        <div class='input-group date' id='categorylteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :category_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Category Created at less than or equal to", :data => {:target => '#categorylteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#categorylteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript">
-      $(function () {
-          $('#categorygteqcreated_atPicker').datetimepicker({
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#categorylteqcreated_atPicker').datetimepicker({
-              useCurrent: false,
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#categorygteqcreated_atPicker').on("dp.change", function (e) {
-              $('#categorylteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
-          });
-          $('#categorylteqcreated_atPicker').on("dp.change", function (e) {
-              $('#categorygteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
-          });
-      });
-  </script>
-
-  <div class="form-group">
-    <%= f.label :user_email_cont, "User email contains" %>
-    <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
+    <%= f.label :user_name_cont, "User name contains" %>
+    <%= f.text_field :user_name_cont, :class => "form-control", :placeholder => "User name contains" %>
   </div>
 
 

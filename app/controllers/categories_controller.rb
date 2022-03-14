@@ -3,8 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @q = Category.ransack(params[:q])
-    @categories = @q.result(distinct: true).includes(:boxes,
-                                                     :items).page(params[:page]).per(10)
+    @categories = @q.result(distinct: true).includes(:boxes).page(params[:page]).per(10)
   end
 
   def show
@@ -47,6 +46,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.fetch(:category, {})
+    params.require(:category).permit(:category_name)
   end
 end

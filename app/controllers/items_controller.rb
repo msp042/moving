@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @q = Item.ransack(params[:q])
-    @items = @q.result(distinct: true).includes(:box, :category,
+    @items = @q.result(distinct: true).includes(:box,
                                                 :user).page(params[:page]).per(10)
   end
 

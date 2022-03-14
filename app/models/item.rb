@@ -9,10 +9,6 @@ class Item < ApplicationRecord
              through: :box,
              source: :user
 
-  has_one    :category,
-             through: :box,
-             source: :category
-
   # Validations
 
   # Scopes

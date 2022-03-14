@@ -6,7 +6,6 @@ RSpec.describe Category, type: :model do
   end
 
   describe "InDirect Associations" do
-    it { should have_many(:items) }
   end
 
   describe "Validations" do

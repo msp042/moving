@@ -2,6 +2,11 @@
   <p class="lead">Narrow results:</p>
 
   <div class="form-group">
+    <%= f.label :category_name_cont, "Category name contains" %>
+    <%= f.text_field :category_name_cont, :class => "form-control", :placeholder => "Category name contains" %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :created_at, "Created at" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
@@ -45,11 +50,6 @@
   <div class="form-group">
     <%= f.label :boxes_name_cont, "Boxes name contains" %>
     <%= f.text_field :boxes_name_cont, :class => "form-control", :placeholder => "Boxes name contains" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :items_title_cont, "Items title contains" %>
-    <%= f.text_field :items_title_cont, :class => "form-control", :placeholder => "Items title contains" %>
   </div>
 
 
