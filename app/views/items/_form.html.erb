@@ -42,7 +42,7 @@
 
     <%= f.label :box_id %>
     <!-- Input for box_id start -->
-    <%= f.number_field :box_id, class: box_class, placeholder: "Enter box" %>
+    <%= f.collection_select :box_id, Box.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for box_id end -->
     <% if box_was_invalid %>
       <% item.errors.full_messages_for(:box).each do |message| %>
