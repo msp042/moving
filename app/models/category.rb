@@ -6,15 +6,11 @@ class Category < ApplicationRecord
 
   # Indirect associations
 
-  has_many   :items,
-             through: :boxes,
-             source: :items
-
   # Validations
 
   # Scopes
 
   def to_s
-    created_at
+    category_name
   end
 end
